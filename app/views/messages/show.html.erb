@@ -3,14 +3,15 @@
 
 
 <p>
-  <strong>スレッドID:</strong>
-  <%= @message.board_id %>
+  <strong>スレッド名:</strong>
+  <%= @message.board.title %>
 
 </p>
 
 <p>
   <strong>投稿者:</strong>
-  <%= @message.creator_name %>
+  <%= @message.user.username %>
+
 </p>
 
 <p>

@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate, only: [:new, :create]
 
   # GET /messages
   # GET /messages.json
@@ -30,6 +31,7 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
+    @message.user_id = current_user.id
 
     respond_to do |format|
       if @message.save
