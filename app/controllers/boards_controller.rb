@@ -1,10 +1,13 @@
 class BoardsController < ApplicationController
   before_action :set_board, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate, only: [:new, :create]
+
 
   # GET /boards
   # GET /boards.json
   def index
     @boards = Board.all
+    # @users = User.where(id: @board.user_id)
   end
 
   # GET /boards/1
@@ -25,6 +28,7 @@ class BoardsController < ApplicationController
   # POST /boards.json
   def create
     @board = Board.new(board_params)
+    @board.user_id = current_user.id
 
     respond_to do |format|
       if @board.save
@@ -59,6 +63,10 @@ class BoardsController < ApplicationController
       format.html { redirect_to boards_url, notice: 'スレッドが削除されました。' }
       format.json { head :no_content }
     end
+  end
+
+  def user
+    return User.find_by(id: self.user_id)
   end
 
   private

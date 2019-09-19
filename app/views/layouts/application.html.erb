@@ -10,8 +10,21 @@
   </head>
 
   <div class="header">
-    <a href="http://localhost:3000/boards"><img src="https://common.cdn.finc.com/onboarding/images/bbsnlogo.png" alt="logo" width="150px"></a>
+      <a href="http://localhost:3000/boards" class="header_block clearfix">
+        <img src="https://common.cdn.finc.com/onboarding/images/bbsnlogo.png" alt="logo" width="150px">
+      </a>
+      <div class="header_btn clearfix">
+        <% if user_signed_in? %>
+      　  <%= current_user.username %>さん、こんにちは　
+          <%= link_to "ログアウト", destroy_user_session_path, method: 'delete' %>
+        <% end %>
+    </div>
+
+
   </div>
+  <p class="alert"><%= alert %></p>
+
+
 
 
   <body>

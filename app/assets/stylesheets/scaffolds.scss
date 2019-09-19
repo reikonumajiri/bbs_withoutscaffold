@@ -2,10 +2,24 @@
   background-color: #3576af;
   font-size: 16px;
   color: #fff;
-  padding: 10px;
+  padding: 20px;
   font-weight: bold;
 }
-
+.header a {
+  border: none;
+}
+.header_btn {
+  text-align: right;
+  font-size: 12px;
+}
+.header_btn a {
+  border: 1px solid #fff;
+  color: #fff;
+}
+.header_btn a:visited {
+  border: 1px solid #fff;
+  color: #fff;
+}
 body {
   background-color: #fff;
   color: #333;
@@ -44,7 +58,16 @@ a {
     opacity: 0.8
   }
 }
-
+input[type="submit" i] {
+  background-color: #3576af;
+  display: inline-block;
+  border: 1px solid #3576af;
+  border-radius: 5px;
+  color: #fff;
+}
+input:hover[type="submit" i] {
+  opacity: 0.8;
+}
 th {
   padding-bottom: 5px;
   text-align: left;
@@ -63,13 +86,15 @@ div {
 #notice {
   color: #8fbc8f;
 }
-
+.alert {
+  color: #f13a48;
+}
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
-h1 {
+h1, h2 {
   color: #3576af;
 }
 

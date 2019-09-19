@@ -11,5 +11,9 @@
   <%= @board.creator_name %>
 </p>
 
-<%= link_to '編集', edit_board_path(@board) %>
+
+<% if @board.user_id == current_user.id %>
+  <%= link_to '編集', edit_board_path(@board) %>
+<% end %>
+
 <%= link_to '一覧に戻る', boards_path %>
