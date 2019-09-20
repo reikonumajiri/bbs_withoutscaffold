@@ -32,6 +32,9 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     @message.user_id = current_user.id
+    # @message.Board.find(params[:board_id])
+
+
 
     respond_to do |format|
       if @message.save

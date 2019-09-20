@@ -1,6 +1,12 @@
 <h1>投稿を編集</h1>
 
-<%= render 'form', message: @message, board: @board %>
+<% if @message.user_id == current_user.id %>
+  <%= render 'form', message: @message, board: @board %>
+<% end %>
+
+<% if @message.user_id != current_user.id %>
+  <p class="alert">投稿の編集権限がありません。</p>
+<% end %>
 
 
 <%= link_to '詳細', board_message_path %>
